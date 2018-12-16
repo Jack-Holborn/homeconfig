@@ -1,0 +1,24 @@
+#!/bin/sh
+# This script displays IP addresses.
+# (C)2018 Jack Holborn <jack.holborn@free.fr>
+#
+# Look for all addresses
+case "$1" in
+	ip)
+		iface="$(which ip)"
+		iface="`${iface} address show|awk -F '/' 'sub(/ *inet /,"") {print $1}'|tr '\n' '|'`"
+
+		iface="${iface#127.0.0.1|}"	# Remove loopback
+		iface="${iface:-none|}"			# Display address list or "none"
+
+		echo ${iface}
+		exit 0
+		;;
+	now)
+		echo "UTC:$(date -u '+%H:%M')"
+		exit 0
+		;;
+	*)
+		exit 1
+		;;
+esac
