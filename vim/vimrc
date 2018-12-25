@@ -3,9 +3,9 @@
 "
 " Set global variables and paths
 set runtimepath=~/.vim,~/.vim/after,/etc/vim,/usr/share/vim/vimfiles,
-								\/usr/share/vim/addons,/usr/share/vim/vim81,
-								\/usr/share/vim/vimfiles/after,/var/lib/vim/addons,
-								\/var/lib/vim/addons/after
+		\/usr/share/vim/addons,/usr/share/vim/vim81,
+		\/usr/share/vim/vimfiles/after,/var/lib/vim/addons,
+		\/var/lib/vim/addons/after
 source /etc/vim/vimrc	" Source system-wide settings first
 source /etc/vim/gvimrc	" Source gvim settings
 set autoindent	" always set autoindenting on
@@ -40,7 +40,7 @@ endif
 if &t_Co > 2 || has('gui_running')
 	syntax on
 	set hlsearch
-	colorscheme torte
+	colorscheme elive	" GUI theme
 	if has('gui_running')
 		set noguipty	" Make external commands work through a pipe instead of a
 									" pseudo-tty
@@ -50,7 +50,7 @@ if &t_Co > 2 || has('gui_running')
 		if has("menu") && !exists("did_install_syntax_menu") && &guioptions !~# "M"
 			source /home/jack/.vim/menu.vim
 		endif
-		colorscheme elive	" GUI theme
+		source snippet
 		set columns=92		" window width
 		set guifont=DejaVuSans\ Mono\ 11	" Text font
 		set lines=30			" window height
