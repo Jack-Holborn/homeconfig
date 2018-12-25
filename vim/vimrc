@@ -1,5 +1,5 @@
 " My personal vim preferences, taken from various sources.
-" (C)2018 Jack Holborn <jack@lorinas.no-ip.org>
+" (C)2018 Jack Holborn <jack.holborn@free.fr>
 "
 " Set global variables and paths
 set runtimepath=~/.vim,~/.vim/after,/etc/vim,/usr/share/vim/vimfiles,
@@ -48,9 +48,9 @@ if &t_Co > 2 || has('gui_running')
 " If the GUI is already running, one may still need to install the Syntax menu.
 " Don't do it when the 'M' flag is included in 'guioptions'.
 		if has("menu") && !exists("did_install_syntax_menu") && &guioptions !~# "M"
-			source /home/jack/.vim/menu.vim
+			source ~/.vim/menu.vim
 		endif
-		source snippet
+		source ~/.vim/snippet
 		set columns=92		" window width
 		set guifont=DejaVuSans\ Mono\ 11	" Text font
 		set lines=30			" window height
