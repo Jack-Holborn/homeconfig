@@ -19,7 +19,7 @@ set autowrite	" Automatically save before commands like :next and :make
 "set hidden		" Do not save before switching between buffers.
 set backspace=indent,eol,start " backspace through lines
 set nowrap		" No wrapping of lines
-set ts=2			" tab size is 4, I like it
+set ts=2			" tab size is 2, I like it
 set sw=2			" Number of spaces used for each step of (auto)indent
 set cursorline	" Highlight cursor line position
 set showcmd			" Display incomplete commands
