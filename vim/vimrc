@@ -37,6 +37,7 @@ if !exists(":DiffOrig")
 	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
 " Colored interface
+let termtype = $TERM
 if &t_Co > 2 || has('gui_running')
 	syntax on
 	set hlsearch
@@ -54,6 +55,10 @@ if &t_Co > 2 || has('gui_running')
 		set columns=92		" window width
 		set guifont=DejaVuSans\ Mono\ 11	" Text font
 		set lines=30			" window height
+	endif
+	if termtype == 'linux'
+		set background=dark
+		colorscheme desert
 	endif
 endif
 " In many terminal emulators the mouse works just fine, thus enable it.
