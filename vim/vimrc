@@ -3,11 +3,10 @@
 "
 " Set global variables and paths
 set runtimepath=~/.vim,~/.vim/after,/etc/vim,/usr/share/vim/vimfiles,
-		\/usr/share/vim/addons,/usr/share/vim/vim81,
+		\/usr/share/vim/addons,/usr/share/vim/vim80,
 		\/usr/share/vim/vimfiles/after,/var/lib/vim/addons,
 		\/var/lib/vim/addons/after
 source /etc/vim/vimrc	" Source system-wide settings first
-source /etc/vim/gvimrc	" Source gvim settings
 set autoindent	" always set autoindenting on
 " Backup files handling
 set nobackup
@@ -43,6 +42,7 @@ if &t_Co > 2 || has('gui_running')
 	set hlsearch
 	colorscheme elive	" GUI theme
 	if has('gui_running')
+		source /etc/vim/gvimrc	" Source gvim settings
 		set noguipty	" Make external commands work through a pipe instead of a
 									" pseudo-tty
 " Load modified menu because the default one lacks some icons and translations
