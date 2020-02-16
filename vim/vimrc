@@ -1,19 +1,22 @@
 " My personal vim preferences, taken from various sources.
 " (C)2018 Jack Holborn <jack.holborn@free.fr>
-"
+" Last modified: 2020 Feb 26
+
 " Set global variables and paths
-set runtimepath=~/.vim,~/.vim/after,/etc/vim,/usr/share/vim/vimfiles,
-		\/usr/share/vim/addons,/usr/share/vim/vim80,
+set runtimepath=~/.vim,~/.vim/after,/usr/share/vim/vimfiles,
+		\/usr/share/vim/vim81,/usr/share/vim/addons,
 		\/usr/share/vim/vimfiles/after,/var/lib/vim/addons,
 		\/var/lib/vim/addons/after
-source /etc/vim/vimrc	" Source system-wide settings first
 set autoindent	" always set autoindenting on
+
 " Backup files handling
 set nobackup
 "set backupext=.bak	" Set backup files extension
+
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.old,.out,.tmp,.toc
+
 set autowrite	" Automatically save before commands like :next and :make
 "set hidden		" Do not save before switching between buffers.
 set backspace=indent,eol,start " backspace through lines
@@ -29,49 +32,35 @@ set scrolloff=1	" Minimum lines to keep above and below cursor
 set showmatch		" Show matching brackets.
 set smartcase		" Do smart case matching
 set splitright	" Put vsplit buffer to the right of the current buffer
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
 	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
+
 " Colored interface
 let termtype = $TERM
-if &t_Co > 2 || has('gui_running')
+if &t_Co > 2
 	syntax on
 	set hlsearch
 	colorscheme elive	" GUI theme
-	if has('gui_running')
-		if filereadable("/etc/vim/gvimrc")
-			source /etc/vim/gvimrc
-		endif
-		set noguipty	" Make external commands work through a pipe instead of a
-									" pseudo-tty
-" Load modified menu because the default one lacks some icons and translations
-" If the GUI is already running, one may still need to install the Syntax menu.
-" Don't do it when the 'M' flag is included in 'guioptions'.
-		if has("menu") && !exists("did_install_syntax_menu") && &guioptions !~# "M"
-			source ~/.vim/menu.vim
-		endif
-		source ~/.vim/snippet
-		set columns=92		" window width
-		set guifont=DejaVuSans\ Mono\ 11	" Text font
-		set lines=30			" window height
-	endif
 	if termtype == 'linux'
 		set background=dark
 		colorscheme desert
 	endif
 endif
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
 	set mouse=a
 endif
+
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
-" Don't fuck with my last cursor's position ok?
-let g:leave_my_cursor_position_alone = 1
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 " Enable file type detection.
@@ -79,6 +68,7 @@ if has("autocmd")
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 	filetype plugin indent on
+
 " Put these in an autocmd group, so that we can delete them easily.
 	augroup vimrcEx
 	au!
@@ -87,6 +77,10 @@ if has("autocmd")
 	augroup END
 endif
 set scrolljump=5	" Lines to scroll when cursor leaves screen
+
+" Don't fuck with my last cursor's position ok?
+let g:leave_my_cursor_position_alone = 1
+
 " Default statusline
 " These ones added by me to show buffer number and how to display spaces
 set laststatus=2

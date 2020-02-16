@@ -1,0 +1,8 @@
+" Maintainer: Jack Holborn <jack@lorinas.ddns.net>
+" Last Change: 2020 Feb 26
+" 
+set noguipty	" Make external commands work through a pipe instead of a
+							" pseudo-tty
+source ~/.vim/snippet	" Load theme
+set columns=96 lines=45	" Window size
+set guifont=xos4\ Terminus\ Regular\ 12	" Text font
