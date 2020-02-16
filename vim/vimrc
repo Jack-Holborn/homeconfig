@@ -42,7 +42,9 @@ if &t_Co > 2 || has('gui_running')
 	set hlsearch
 	colorscheme elive	" GUI theme
 	if has('gui_running')
-		source /etc/vim/gvimrc	" Source gvim settings
+		if filereadable("/etc/vim/gvimrc")
+			source /etc/vim/gvimrc
+		endif
 		set noguipty	" Make external commands work through a pipe instead of a
 									" pseudo-tty
 " Load modified menu because the default one lacks some icons and translations
