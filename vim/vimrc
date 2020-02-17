@@ -1,6 +1,6 @@
 " My personal vim preferences, taken from various sources.
 " (C)2018 Jack Holborn <jack.holborn@free.fr>
-" Last modified: 2020 Feb 26
+" Last modified: 2020 Feb 17
 
 " Set global variables and paths
 set runtimepath=~/.vim,~/.vim/after,/usr/share/vim/vimfiles,

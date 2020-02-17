@@ -1,3 +1,7 @@
+" Author:  Ramzi Akremi
+" License: MIT
+" Version: https://github.com/rakr/vim-one
+"
 let g:airline#themes#one#palette = {}
 
 function! airline#themes#one#refresh()

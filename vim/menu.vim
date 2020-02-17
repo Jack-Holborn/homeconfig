@@ -1,6 +1,6 @@
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Modified by:  Jack Holborn <jack@lorinas.ddns.net>
-" Last Change:	2020 Feb 26
+" Modified by: Jack Holborn <jack@lorinas.ddns.net>
+" Last Change: 2020 Feb 17
 let s:cpo_save = &cpo
 set cpo&vim
 

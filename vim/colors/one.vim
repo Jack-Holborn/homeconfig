@@ -1,6 +1,7 @@
 " Name:    one vim colorscheme
 " Author:  Ramzi Akremi
 " License: MIT
+" URL: https://github.com/rakr/vim-one
 " Version: 1.1.1-pre
 
 " Global setup =============================================================={{{

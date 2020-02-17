@@ -1,8 +1,19 @@
 " Maintainer: Jack Holborn <jack@lorinas.ddns.net>
-" Last Change: 2020 Feb 26
-" 
+" Last Change: 2020 Feb 17
+"
 set noguipty	" Make external commands work through a pipe instead of a
 							" pseudo-tty
-source ~/.vim/snippet	" Load theme
+
+" Load theme, choose light or dark
+set background=dark
+let g:one_allow_italics=1
+let g:airline_theme='one'
+if (empty($TMUX))
+	if (has("termguicolors"))
+		set termguicolors
+	endif
+endif
+colorscheme one	" Choose one or one-dark
+
 set columns=96 lines=45	" Window size
 set guifont=xos4\ Terminus\ Regular\ 12	" Text font

@@ -1,7 +1,7 @@
 " ===============================================================
 " one-dark
 " 
-" URL: 
+" URL: https://github.com/rakr/vim-one
 " Author: Ramzi Akremi
 " License: MIT
 " Last Change: 2017/01/26 18:57
