@@ -951,7 +951,7 @@ endif
 if has("toolbar")
   an 1.10 ToolBar.Open			:browse confirm e<CR>
   an <silent> 1.20 ToolBar.Save		:if expand("%") == ""<Bar>browse confirm w<Bar>else<Bar>confirm w<Bar>endif<CR>
-  an <silent> icon=~/.icons/Newaita/actions/22/document-save-all.png 1.30 ToolBar.SaveAll		:browse confirm wa<CR>
+  an <silent> icon=~/.vim/bitmaps/document-save-all.png 1.30 ToolBar.SaveAll		:browse confirm wa<CR>
 
   if has("printer")
     an 1.40   ToolBar.Print		:hardcopy<CR>
@@ -986,18 +986,18 @@ if has("toolbar")
   endif
 
   an 1.215 ToolBar.-sep5-		<Nop>
-  an <silent> icon=~/.icons/Newaita/actions/22/task-new.png 1.220 ToolBar.LoadSesn	:call <SID>LoadVimSesn()<CR>
-  an <silent> icon=~/.icons/Newaita/actions/22/document-export.png 1.230 ToolBar.SaveSesn	:call <SID>SaveVimSesn()<CR>
+  an <silent> icon=~/.vim/bitmaps/task-new.png 1.220 ToolBar.LoadSesn	:call <SID>LoadVimSesn()<CR>
+  an <silent> icon=~/.vim/bitmaps/document-export.png 1.230 ToolBar.SaveSesn	:call <SID>SaveVimSesn()<CR>
   an   1.240 ToolBar.RunScript		:browse so<CR>
 
   an 1.245 ToolBar.-sep6-		<Nop>
   an 1.250 ToolBar.Make			:make<CR>
-  an 1.270 ToolBar.RunCtags		:exe "!" . g:ctags_command<CR>
+  an <silent> icon=~/.vim/bitmaps/runctags.png 1.270 ToolBar.RunCtags		:exe "!" . g:ctags_command<CR>
   an 1.280 ToolBar.TagJump		g<C-]>
 
   an 1.295 ToolBar.-sep7-		<Nop>
   an 1.300 ToolBar.Help			:help<CR>
-  an <silent> icon=~/.icons/Newaita/actions/22/help-about.png 1.310 ToolBar.FindHelp	:call <SID>Helpfind()<CR>
+  an <silent> icon=~/.vim/bitmaps/help-about.png 1.310 ToolBar.FindHelp	:call <SID>Helpfind()<CR>
 
 " Only set the tooltips here if not done in a language menu file
 if exists("*Do_toolbar_tmenu")
