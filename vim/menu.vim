@@ -5,8 +5,8 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 " Avoid installing the menus twice
-if !exists("did_install_menu")
-let did_install_menu = 1
+if !exists("did_install_default_menu")
+let did_install_default_menu = 1
 
 if exists("v:lang") || &langmenu != ""
   " Try to find a menu translation file for the current language.
