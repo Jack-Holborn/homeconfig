@@ -5,8 +5,8 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 " Avoid installing the menus twice
-if !exists("did_install_default_menu")
-let did_install_default_menu = 1
+if !exists("did_install_default_menus")
+let did_install_default_menus = 1
 
 if exists("v:lang") || &langmenu != ""
   " Try to find a menu translation file for the current language.
@@ -991,7 +991,7 @@ if has("toolbar")
   an   1.240 ToolBar.RunScript		:browse so<CR>
 
   an 1.245 ToolBar.-sep6-		<Nop>
-  an 1.250 ToolBar.Make			:make<CR>
+  an <silent> icon=~/.vim/bitmaps/runmake.png 1.250 ToolBar.Make			:make<CR>
   an <silent> icon=~/.vim/bitmaps/runctags.png 1.270 ToolBar.RunCtags		:exe "!" . g:ctags_command<CR>
   an 1.280 ToolBar.TagJump		g<C-]>
 
