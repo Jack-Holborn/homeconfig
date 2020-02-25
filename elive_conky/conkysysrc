@@ -1,0 +1,49 @@
+--[[
+==============================================================================
+                              Conky for Elive
+    Author: Thanathermesis
+    Versionn: 0.1
+    License: GPL?
+    Modified by: Jack Holborn
+
+==============================================================================
+]]
+
+conky.config = {
+    background = true,
+    use_xft = true,
+    font = "Noto Sans:size=8",
+    xftalpha = 1,
+    update_interval = 1.0,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_type = "desktop",
+    own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
+    double_buffer = true,
+    minimum_width = 200,
+    maximum_width = 240,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = true,
+    default_color = "e4eeff",
+    default_shade_color = "000000",
+    default_outline_color = "828282",
+    alignment = "top_right",
+    gap_x = 12,
+    gap_y = 18,
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 2,
+    top_cpu_separate = false,
+    override_utf8_locale = true,
+    own_window_argb_visual = true
+}
+
+conky.text = [[
+${font Noto Sans:bold:size=9}SYSTEM ${hr 2}
+${voffset -6}${font Noto Sans:bold:size=19}${time %H:%M}${font}${alignr}${voffset -10}${time %A %d %B, %Y}
+${voffset 9}Kernel ${alignr}${kernel}
+Uptime: ${uptime} ${alignr} Battery: ${battery_percent}%
+]]

@@ -1,0 +1,60 @@
+--[[
+==============================================================================
+                              Conky for Elive
+    Author: Thanathermesis
+    Versionn: 0.1
+    License: GPL?
+    Modified by: Jack Holborn
+
+==============================================================================
+]]
+
+conky.config = {
+    background = true,
+    use_xft = true,
+    font = "Noto Sans:size=8",
+    xftalpha = 1,
+    update_interval = 0.25,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_type = "desktop",
+    own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
+    double_buffer = true,
+    minimum_width = 200,
+    maximum_width = 240,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = true,
+    default_color = "e4eeff",
+    default_shade_color = "000000",
+    default_outline_color = "828282",
+    alignment = "top_right",
+    gap_x = 12,
+    gap_y = 640,
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 2,
+    top_cpu_separate = false,
+    override_utf8_locale = true,
+    own_window_argb_visual = true
+}
+
+conky.text = [[
+${font Noto Sans:bold:size=9}NETWORK ${hr 2}${font}
+${if_up eno1}IP address: ${alignr} ${addr eno1}
+${downspeedgraph eno1 e4eeff 558855}
+${voffset -10}DLS: ${downspeed eno1} kb/s ${alignr} total: ${totaldown eno1}
+${voffset 5}${upspeedgraph eno1 e4eeff 885555}
+${voffset -10}ULS: ${upspeed eno1} kb/s ${alignr} total: ${totalup eno1}
+${endif}
+${if_up wlp2s0}IP address: ${alignr} ${addr wlp2s0}
+ESSID: ${alignr} ${wireless_essid wlp2s0}
+Connection quality: ${alignr} ${wireless_link_qual_perc wlp2s0}%
+${downspeedgraph wlp2s0 e4eeff 558855}
+${voffset -10}DLS: ${downspeed wlp2s0} kb/s ${alignr} total: ${totaldown wlp2s0}
+${voffset 5}${upspeedgraph wlp2s0 e4eeff 885555}
+${voffset -10}ULS: ${upspeed wlp2s0} kb/s ${alignr} total: ${totalup wlp2s0}
+${endif}
+]]
