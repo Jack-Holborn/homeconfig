@@ -1,4 +1,4 @@
 #!/bin/bash
 conky -c ~/.conkysysrc
-conky -c
+conky -c ~/.conkyrc
 conky -c ~/.conkynetrc
