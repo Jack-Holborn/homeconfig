@@ -11,4 +11,5 @@ you need to:<br>
 you need to:<br>
 -extract tar file into your home directory<br>
 -modify network interfaces in conkyrc to suit yours<br>
-- Sabayon Linux issue file with Logo
+- Sabayon Linux issue file with Logo<br>
+- Elive conky configuration enhanced
