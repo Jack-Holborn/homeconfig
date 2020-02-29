@@ -1,4 +1,4 @@
-#!/bin/bash
-conky -c ~/.conkysysrc
-conky -c ~/.conkyrc
-conky -c ~/.conkynetrc
+#!/bin/bash -e
+for conffile in ~/.{conkysysrc,conkyrc,conkynetrc}; do
+	( conky -p 2 -c "$conffile" ) &
+done

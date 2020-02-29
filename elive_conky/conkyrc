@@ -47,14 +47,14 @@ ${cpugraph cpu e4eeff afa8ca}
 Freq: ${freq cpu} Mhz${alignr}Temp: ${hwmon 3 temp 1} °C
 
 ${font Noto Sans:bold:size=9}MEMORY ${hr 2}${font}
-RAM ${alignc} ${mem} / ${memmax} ${alignr} ${memperc}%
+RAM ${alignc} ${mem} / ${memmax}${alignr}${memperc}%
 ${membar}
-SWAP ${alignc} ${swap} / ${swapmax} ${alignr} ${swapperc}%
+SWAP ${alignc} ${swap} / ${swapmax}${alignr}${swapperc}%
 ${swapbar}
 ${font Noto Sans:bold:size=9}DISK ${hr 2}${font}
-/ ${alignc} ${fs_used /} / ${fs_size /} ${alignr} ${fs_used_perc /}%
+/ ${alignc} ${fs_used /} / ${fs_size /}${alignr}${fs_used_perc /}%
 ${fs_bar /}
-/tmp ${alignc} ${fs_used /tmp} / ${fs_size /tmp} ${alignr} ${fs_used_perc /tmp}%
+/tmp ${alignc} ${fs_used /tmp} / ${fs_size /tmp}${alignr}${fs_used_perc /tmp}%
 ${fs_bar /tmp}
 
 ${font Noto Sans:bold:size=9}TOP RAM MEMORY USAGE ${hr 2}${font}

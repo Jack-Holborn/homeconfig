@@ -44,6 +44,6 @@ conky.config = {
 conky.text = [[
 ${font Noto Sans:bold:size=9}SYSTEM ${hr 2}
 ${voffset -6}${font Noto Sans:bold:size=19}${time %H:%M}${font}${alignr}${voffset -10}${time %A %d %B, %Y}
-${voffset 9}Kernel ${alignr}${kernel}
-Uptime: ${uptime} ${alignr} Battery: ${battery_percent}%
+${voffset 9}Kernel${alignr}${kernel}
+Uptime: ${uptime}${alignr}Battery: ${battery_percent}%
 ]]
