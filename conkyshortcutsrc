@@ -1,0 +1,60 @@
+conky.config = {
+	alignment = 'bottom_left',
+	background = true,
+	color2 = '5D7B86',
+	cpu_avg_samples = 2,
+	default_color = 'F9FAF9',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=8',
+	draw_shades = false,
+	gap_x = 25,
+	gap_y = 45,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 2.0,
+	use_xft = true,
+}
+conky.text = [[
+Applications
+${color2}Nouveau Terminal${goto 210}${color}mod+Enter
+${color2}Navigateur Web${goto 210}${color}mod+F3
+${color2}Gestionnaire de Fichiers${goto 210}${color}mod+F4
+${color2}Mixeur ALSA${goto 210}${color}mod+Shift+v
+
+Menus
+${color2}Dmenu${goto 210}${color}mod+F2
+${color2}Bmenu${goto 210}${color}mod+Ctrl+b
+${color2}Morc_menu${goto 210}${color}mod+m
+
+Workspaces
+${color2}Workspace aller/retour${goto 210}${color}mod+b
+${color2}Aller au workspace 1-8${goto 210}${color}mod+1-8
+${color2}Envoyer au workspace 1-8${goto 210}${color}mod+Ctrl+1-8
+${color2}Afficher sur le workspace 1-8${goto 210}${color}mod+Shift+1-8
+${color2}Workspace gauche/droite${goto 210}${color}mod+Ctrl+arrowkeys
+
+Containers
+${color2}Fermer container${goto 210}${color}mod+Shift+q
+${color2}Plein écran${goto 210}${color}mod+f
+${color2}Arrangement vertical${goto 210}${color}mod+v
+${color2}Arrangement horizontal${goto 210}${color}mod+h
+${color2}Basculer Arrangement${goto 210}${color}mod+q
+${color2}Layout Superposition${goto 210}${color}mod+s
+${color2}Layout Onglets${goto 210}${color}mod+t
+${color2}Basculer Layout${goto 210}${color}mod+e
+${color2}Déplacement container aller/retour ${goto 210}${color}mod+Shift+b
+${color2}Border 1 pixel${goto 210}${color}mod+p
+${color2}Border normal${goto 210}${color}mod+n
+${color2}Basculer focus${goto 210}${color}mod+Space
+${color2}Basculer floating${goto 210}${color}mod+Shift+Space
+
+Misc
+${color2}Stopper compositeur${goto 210}${color}mod+c
+${color2}Démarrer compositeur${goto 210}${color}mod+Ctrl+c
+${color2}Quitter${goto 210}${color}mod+Ctrl+k
+${color2}Aide raccourcis${goto 210}${color}mod+Shift+h
+Modifieur = <Super>
+]]
