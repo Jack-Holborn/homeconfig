@@ -23,12 +23,12 @@ cpu_usage {
 }
 
 load {
-        format = "load %1min"
+        format = "LOAD %1min"
         max_threshold = 3
 }
 
 disk "/" {
-        format = "⛁ %avail free"
+        format = "Root ⛁ %avail free"
 }
 
 wireless _first_ {
@@ -37,8 +37,8 @@ wireless _first_ {
 }
 
 ethernet _first_ {
-        format_up = "eth: %ip %speed"
-        format_down = "pas d'adresse"
+        format_up = "Eth: %ip %speed"
+        format_down = "non connecté"
 }
 
 battery all {
@@ -46,10 +46,10 @@ battery all {
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
-        status_chr = "⚡"
-        status_bat = ""
-        status_unk = "--"
-        status_full = "☻"
+        status_chr = "BAT⚡"
+        status_bat = "BAT"
+        status_unk = "BAT--"
+        status_full = "BAT☻"
         color_bad = "#EF6E75"
         low_threshold = 15
         threshold_type = percentage
@@ -62,5 +62,5 @@ memory {
 }
 
 tztime local {
-        format = "%d/%m/%Y %H:%M "
+        format = "%H:%M %Z "
 }
