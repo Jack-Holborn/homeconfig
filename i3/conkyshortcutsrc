@@ -1,3 +1,7 @@
+-- Conky file --
+-- Quick reference for i3 shortcuts
+-- Last change: 03-2020 by Jack Holborn <jack.holborn@free.fr>
+--
 conky.config = {
 	alignment = 'bottom_left',
 	background = true,

@@ -1,4 +1,6 @@
 # i3status configuration file.
+# Last change: 03-2020 by Jack Holborn <jack.holborn@free.fr>
+#
 general {
 				output_format = "i3bar"
         colors = true

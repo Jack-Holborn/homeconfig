@@ -1,5 +1,6 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Last change: 03-2020 by Jack Holborn <jack.holborn@free.fr>
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
