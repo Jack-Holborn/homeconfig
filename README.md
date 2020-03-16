@@ -12,4 +12,7 @@ you need to:<br>
 -extract tar file into your home directory<br>
 -modify network interfaces in conkyrc to suit yours<br>
 - Sabayon Linux issue file with Logo<br>
-- Elive conky configuration enhanced
+- Elive conky configuration enhanced<br>
+- Various configuration files for i3 window manager with i3status<br>
+and picom configuration for i3 and conky file showing<br>
+shortcuts list on the root window
