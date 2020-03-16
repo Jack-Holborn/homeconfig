@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+  <name xml:lang="en">homeconfig</name>
+  <shortdesc xml:lang="en">Storage for my own configuration tweaks</shortdesc>
+  <description>Here is the place where I'll put every configuration file and stuff
+  That I Found out. This is Open source things so I put them here for sharing
+  purpose. Feel free to use this material and share. Everything should be alike,
+  shouldn't it?</description>
+
+  <name xml:lang="fr">homeconfig</name>
+  <shortdesc xml:lang="fr">Stockage de mes configurations</shortdesc>
+  <description>C'est l'emplacement où je mets tous les fichiers de configuration et
+  les trucs que je trouve un peu partout et qui me servent. C'est de l'Open source
+  donc je les ai mis ici pour les partager. N'hésitez pas à les utiliser et à les
+  partager à votre tour, C'est ce qu'on devrait tous faire, n'est-ce pas?</description>
+
+  <homepage rdf:resource="https://github.com/jack-holborn/homeconfig" />
+  <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+  <programming-language>Shell+cfg</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Jack Holborn</foaf:name>
+      <foaf:mbox rdf:resource="mailto:jack_holborn@hotmail.com" />
+    </foaf:Person>
+  </maintainer>
+
+</Project>
+
