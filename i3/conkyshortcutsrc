@@ -25,7 +25,10 @@ conky.text = [[
 Applications
 ${color2}Nouveau Terminal${goto 210}${color}mod+Enter
 ${color2}Navigateur Web${goto 210}${color}mod+F3
-${color2}Gestionnaire de Fichiers${goto 210}${color}mod+F4
+${color2}Gestionnaire de Fichiers PCmanFM${goto 210}${color}mod+F4
+${color2}Midnight Commander${goto 210}${color}mod+F5
+${color2}Gestionnaire de Fichiers Ranger${goto 210}${color}mod+F6
+${color2}Lecteur audio MOCP${goto 210}${color}mod+F7
 ${color2}Mixeur ALSA${goto 210}${color}mod+Shift+v
 
 Menus
@@ -42,14 +45,15 @@ ${color2}Workspace gauche/droite${goto 210}${color}mod+Ctrl+arrowkeys
 
 Containers
 ${color2}Fermer container${goto 210}${color}mod+Shift+q
+${color2}Déplacement container aller/retour${goto 210}${color}mod+Shift+b
+${color2}Ranger dans le scratchpad${goto 210}${color}mod+Ctrl+Tab
+${color2}Afficher le scratchpad${goto 210}${color}mod+Tab
 ${color2}Plein écran${goto 210}${color}mod+f
 ${color2}Arrangement vertical${goto 210}${color}mod+v
 ${color2}Arrangement horizontal${goto 210}${color}mod+h
-${color2}Basculer Arrangement${goto 210}${color}mod+q
+${color2}Basculer Arrangement${goto 210}${color}mod+e
 ${color2}Layout Superposition${goto 210}${color}mod+s
 ${color2}Layout Onglets${goto 210}${color}mod+t
-${color2}Basculer Layout${goto 210}${color}mod+e
-${color2}Déplacement container aller/retour ${goto 210}${color}mod+Shift+b
 ${color2}Border 1 pixel${goto 210}${color}mod+p
 ${color2}Border normal${goto 210}${color}mod+n
 ${color2}Basculer focus${goto 210}${color}mod+Space
