@@ -44,7 +44,7 @@ bindsym $mod+m exec --no-startup-id morc_menu
 
 #exec --no-startup-id volumeicon
 #bindsym $mod+Shift+v exec terminal -e 'alsamixer -c 1'
-exec --no-startup-id dbus-launch --sh-syntax --exit-with-session pulseaudio --start --realtime=1 --log-target=newfile:/home/jack/.xsession-errors
+exec --no-startup-id dbus-launch --sh-syntax --exit-with-session pulseaudio --start --daemonize --realtime --use-pid-file --log-target=stderr
 #exec --no-startup-id pasystray
 exec --no-startup-id i3-pulse
 bindsym $mod+Shift+v exec pavucontrol
@@ -63,6 +63,7 @@ bindsym $mod+Shift+F4 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e mc ~
 bindsym $mod+F6 exec terminal -e ranger ~
 bindsym $mod+F7 exec terminal -e 'mocp'
+bindsym $mod+F8 exec terminal -fg '#FFFFFF' -fn 'xft:NotoSansMonoLight:size=9' -e i3-mailing
 bindsym $mod+c exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+c exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'redémarrage dunst'
