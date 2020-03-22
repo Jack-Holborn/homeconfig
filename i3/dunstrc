@@ -1,0 +1,60 @@
+# Configuration for i3 notification daemon
+# Last change: 03-2020 by Jack Holborn <jack.holborn@free.fr>
+[global]
+    frame_width = 1
+    frame_color = "#788388"
+    font = Noto Sans 10
+    markup = full
+    format = "%s %p\n%b"
+    sort = yes
+    indicate_hidden = yes
+    alignment = left
+    bounce_freq = 5
+    show_age_threshold = 60
+    word_wrap = no
+    ellipsize = middle
+    ignore_newline = no
+    geometry = "300x5-25+25"
+    shrink = yes
+    transparency = 15
+    idle_threshold = 120 
+    follow = mouse
+    sticky_history = yes
+    history_length = 20
+    show_indicators = yes
+    line_height = 0
+    separator_height = 2
+    padding = 2
+    horizontal_padding = 10
+    separator_color = "#5C6C71"
+    startup_notification = false
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = palemoon
+    icon_position = left
+    icon_path = /home/jack/.icons/Papirus-Dark/24x24/actions:/home/jack/.icons/Papirus/24x24/actions:/usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    max_icon_size=128
+
+[shortcuts]
+
+[urgency_low]
+    background = "#263238"
+    foreground = "#758185"
+    timeout = 4
+
+[urgency_normal]
+    background = "#263238"
+    foreground = "#F9FAF9"
+    timeout = 6
+
+[urgency_critical]
+    background = "#D62929"
+    foreground = "#F9FAF9"
+    timeout = 0
+
+[irc]
+    appname = irssi
+    timeout = 0
+    background = "#0033BB"
+    foreground = "#DDDDDD"
+
+# vim: ft=cfg
