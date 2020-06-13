@@ -12,7 +12,7 @@
     bounce_freq = 5
     show_age_threshold = 60
     word_wrap = no
-		ellipsize = middle
+    ellipsize = middle
     ignore_newline = no
     geometry = "300x5-25+25"
     shrink = yes
