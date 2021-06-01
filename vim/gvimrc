@@ -15,5 +15,5 @@ if (empty($TMUX))
 endif
 colorscheme one	" Choose one or one-dark
 
-set columns=96 lines=45	" Window size
+set columns=109 lines=45	" Window size
 set guifont=xos4\ Terminus\ Regular\ 12	" Text font
