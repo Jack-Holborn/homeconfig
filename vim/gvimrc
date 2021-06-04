@@ -18,5 +18,5 @@ colorscheme one	" Choose one or one-dark
 
 set columns=109 lines=45	" Window size
 set guifont=xos4\ Terminus\ Regular\ 12	" Text font
-"set columns=100 lines=25	" Window size
-"set guifont=Noto\ Sans\ Mono\ SemiCondensed\ Light\ 12	" Text font
+"set columns=92 lines=25	" Window size
+"set guifont=Noto\ Sans\ Mono\ SemiCondensed\ Light\ 10	" Text font
