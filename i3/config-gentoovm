@@ -13,8 +13,7 @@ floating_modifier $mod
 set $refresh_i3status killall -SIGUSR1 i3status
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font xft:URW Gothic 10
-font pango:Deja Vu Sans Mono 10
+font xft:URW Gothic 10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -49,15 +48,15 @@ mouse_warping output
 # set default desktop layout (default is tiling)
 workspace_layout default
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 2
+default_border pixel 1
 default_floating_border normal 1
 # workspace back and forth (with/without active container)
 #workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
 #bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 # split orientation
-bindsym $mod+h split h;exec notify-send 'Arrangement horizontal'
-bindsym $mod+v split v;exec notify-send 'Arrangement vertical'
+bindsym $mod+h split h;exec notify-send "Arrangement horizontal"
+bindsym $mod+v split v;exec notify-send "Arrangement vertical"
 bindsym $mod+e split toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -114,8 +113,7 @@ bar {
 	position bottom
 	bindsym button4 nop
 	bindsym button5 nop
-	#font xft:URW Gothic 9
-	font pango:Deja Vu Sans Mono 9
+  font xft:URW Gothic 9
 
     colors {
         background #222D31
@@ -133,14 +131,14 @@ bar {
 #############################
 # COLORS
 #############################
-# Color palette used for the jterm ( ~/.Xresources file )
+# Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
 # Change the variable name at the place you want to match the color
-# of your jterm like this:
+# of your terminal like this:
 # [example]
 # If you want your bar to have the same background color as your 
-# jterm background change the line 362 from:
+# terminal background change the line 362 from:
 # background #14191D
 # to:
 # background $term_background
@@ -177,8 +175,8 @@ client.background       #2B2C2B
 # WINDOWS/CONTAINDERS
 #############################
 # change borders
-bindsym $mod+i border pixel 2
-bindsym $mod+n border normal 1
+bindsym $mod+i border pixel 1
+bindsym $mod+n border normal
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
@@ -213,10 +211,6 @@ bindsym $mod+Tab scratchpad show
 bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -242,7 +236,9 @@ smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps.
+# Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace).
+# If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -280,15 +276,9 @@ mode "$mode_gaps_outer" {
 #############################
 # Autostart applications
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #exec --no-startup-id roundwall
 #exec sleep 2; picom -b
-exec urxvtd -q -o -f
+#exec urxvtd -q -o -f
 #exec --no-startup-id nm-applet
 #exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id pamac-tray
@@ -298,86 +288,85 @@ exec urxvtd -q -o -f
 #exec i3-lockdrags
 ##exec --no-startup-id i3-jack
 #exec_always --no-startup-id fix_xcursor
+
 # Open specific applications in floating mode
 for_window [window_type=dialog] floating enable border normal 1
-for_window [window_type=splash] floating enable border pixel 2
-for_window [title="alsamixer"] floating enable border pixel 2
-for_window [class="calamares"] floating enable border normal 1
+for_window [window_type=splash] floating enable border pixel 1
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 2
-for_window [class="GParted"] floating enable border normal 1
-for_window [title="i3_help"] floating enable sticky enable border normal 1
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal 1
+for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal 1
+for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal 1
+for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal 1
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal 1
-for_window [class="Simple-scan"] floating enable border normal 1
-for_window [class="(?i)System-config-printer.py"] floating enable border normal 1
-for_window [class="Skype"] floating enable border normal 1
-for_window [class="Timeset-gui"] floating enable border normal 1
-for_window [class="(?i)virtualbox"] floating enable border normal 1
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class=".*Celluloid"] floating enable border pixel 2
 for_window [class="mpv"] floating enable border pixel 2
 for_window [class="Audacious"] floating enable border pixel 2
 for_window [class="Xfburn"] floating enable
-for_window [window_type=dialog instance="gnucash"] floating enable border pixel 2
+for_window [window_type=dialog instance="gnucash"] floating enable border pixel 1
 # Midnight commander is floating
 for_window [title="Midnight Commander"] floating enable
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-# Start Applications
-# start a jterm
-bindsym $mod+Return exec jterm
+# start a terminal
+bindsym $mod+Return exec terminology
 # start program launcher
-bindsym $mod+F2 exec --no-startup-id dmenu_run
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+F2 exec --no-startup-id dmenu_recency
 # launch categorized menu
 #bindsym $mod+m exec --no-startup-id morc_menu
-#bindsym $mod+Ctrl+b exec jterm -e 'bmenu'
-#bindsym $mod+F3 exec firefox --new-window
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# Start Applications
+bindsym $mod+F3 exec "terminology -T 'Midnight Commander' --geometry=100x25 -e mc"
+bindsym $mod+F4 exec "caja --browser --no-desktop"
+bindsym $mod+F5 exec "terminology -T Lynx --geometry=125x25 -e lynx"
+bindsym $mod+F6 exec "terminology -T Mutt --geometry=81x25 -e 'ssh -t lorinas.homelinux.lan -- mutt'"
+bindsym $mod+F7 exec "gvim --servername I3"
+#bindsym $mod+Ctrl+b exec '"terminology -e 'bmenu'"
+#bindsym $mod+F3 exec "firefox --new-window"
 #bindsym $mod+F4 exec pcmanfm
 #bindsym $mod+Shift+F4 exec pcmanfm_pkexec
-#bindsym $mod+F5 exec jterm -e mc ~
-bindsym $mod+F5 exec "jterm -title 'Midnight Commander' -geometry 100x25 +sb -e mc"
-bindsym $mod+F6 exec "jterm -title 'S-Nail' -geometry 90x25 +sb -e s-nail -Semptystart -Alorinas"
-bindsym $mod+F7 exec "jterm -title VIm +sb -e vim"
-#bindsym $mod+F6 exec jterm -e ranger ~
-#bindsym $mod+F7 exec jterm -e 'mocp'
-#bindsym $mod+F8 exec jterm -fg '#FFFFFF' -fn 'xft:NotoSansMonoLight:size=9' -e i3-mailing
-#bindsym $mod+F9 exec jterm -fn 'xft:NotoSansMono:size=11'
+#bindsym $mod+F5 exec "terminology -e mc"
+#bindsym $mod+F6 exec "terminology -e ranger ~"
+#bindsym $mod+F7 exec "terminology -e 'mocp'"
+#bindsym $mod+F8 exec "uxterm -fg '#FFFFFF' -fn 'xft:NotoSansMonoLight:size=9' -e i3-mailing"
+#bindsym $mod+F9 exec "uxterm -fn 'xft:NotoSansMono:size=11'"
 #bindsym $mod+c exec --no-startup-id pkill picom
-#bindsym $mod+Ctrl+c exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'redémarrage dunst'
+#bindsym $mod+Ctrl+c exec --no-startup-id "picom -b"
+#bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'redémarrage dunst'"
 #bindsym Print exec --no-startup-id i3-scrot
-#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-#bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+#bindsym $mod+Print --release exec --no-startup-id "i3-scrot -w"
+#bindsym $mod+Shift+Print --release exec --no-startup-id "i3-scrot -s"
+#bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-#####################
-### sound-section ###
-#####################
-##exec --no-startup-id volumeicon
-##bindsym $mod+Shift+v exec jterm -e 'alsamixer -c 1'
+###################
+### sound-section #
+###################
+#exec --no-startup-id volumeicon
+#bindsym $mod+Shift+v exec "terminology -e 'alsamixer -c 1'"
 #exec dbus-launch --sh-syntax --exit-with-session pulseaudio --start --daemonize --realtime --use-pid-file --exit-idle-time=5 --log-target=stderr
 #exec --no-startup-id start-pulseaudio-x11
 #exec --no-startup-id sleep 2; pa-applet
 #exec --no-startup-id sleep 2; pasystray
 #bindsym $mod+Shift+v exec pavucontrol
-
-## Screen brightness controls
-## bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-## bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
