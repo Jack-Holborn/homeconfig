@@ -101,6 +101,17 @@ bindsym $mod+Shift+egrave move container to workspace number $ws7
 bindsym $mod+Shift+underscore move container to workspace number $ws8
 bindsym $mod+Shift+ccedilla move container to workspace number $ws9
 bindsym $mod+Shift+agrave move container to workspace number $ws10
+# move to workspace with focused container
+bindsym $mod+Ctrl+ampersand move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+Ctrl+eacute move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+Ctrl+quotedbl move container to workspace number $ws3; workspace number $ws3
+bindsym $mod+Ctrl+apostrophe move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+Ctrl+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+Ctrl+minus move container to workspace number $ws6; workspace number $ws6
+bindsym $mod+Ctrl+egrave move container to workspace number $ws7; workspace number $ws7
+bindsym $mod+Ctrl+underscore move container to workspace number $ws8; workspace number $ws8
+bindsym $mod+Ctrl+ccedilla move container to workspace number $ws9; workspace number $ws9
+bindsym $mod+Ctrl+agrave move container to workspace number $ws10; workspace number $ws10
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
