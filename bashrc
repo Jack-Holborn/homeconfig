@@ -147,10 +147,12 @@ fi
 alias df='df -h'
 alias gmail='mailx -Agmail'
 alias i3conf='i3-msg split v; vimremote ~/.config/i3/config'
+alias mc="case \"$TERM\" in linux) sed -i 's/^\(skin=\).*$/\1nicedark/' ~/.config/mc/ini; mc -d; sed -i 's/^\(skin=\).*$/\1modarin256/' ~/.config/mc/ini; ;; *) mc; ;; esac"
 alias msg='mailx -Alocal -Seditalong -Sheaders'
 alias pso='ps -e -o pid,ruser:10,stat,cmd'
 alias sshlorinas='ssh -X lorinas.homelinux.lan'
 alias sshgentoo='ssh -X 192.168.1.137'
+alias sshwinbox='ssh -X winbox.homelinux.lan'
 alias ssxgentoo='ssh -Xfn 192.168.1.137'
 alias claws-mail='ssh -Xfn 192.168.1.137 "LANG=fr_FR.utf8 claws-mail"'
 alias www='xlinks -force-html'
