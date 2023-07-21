@@ -1,13 +1,13 @@
 # i3status configuration file.
-# Last change: 03-2020 by Jack Holborn <jack.holborn@free.fr>
+# Last change: 07-2023 by Jack Holborn <jack.holborn@free.fr>
 #
 general {
-				output_format = "i3bar"
+        output_format = "i3bar"
         colors = true
         interval = 5
         color_good = "#2AA198"
-        color_bad = "#586E75"
-        color_degraded = "#DC322F"
+        color_degraded = "#586E75"
+        color_bad = "#DC322F"
 }
 
 order += "cpu_usage"
@@ -21,6 +21,7 @@ order += "memory"
 order += "tztime local"
 
 cpu_usage {
+        color_degraded = "#CA9B1A"
         format = "CPU %usage"
 }
 
@@ -34,6 +35,7 @@ disk "/" {
 }
 
 wireless _first_ {
+        color_bad = "#586E75"
 				format_up = "Wifi: %essid (%quality, %bitrate) %ip"
 				format_down = " Wifi non connecté "
 }
@@ -64,5 +66,5 @@ memory {
 }
 
 tztime local {
-        format = "%H:%M %Z "
+        format = "%A %d %B %Y %H:%M %Z "
 }
