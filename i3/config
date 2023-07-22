@@ -119,7 +119,7 @@ bindsym $mod+Ctrl+Left workspace prev
 bar {
 	# show only workspace names
 	strip_workspace_numbers yes
-  #status_command exec /home/jack/.netspeed.sh
+	#status_command exec /home/jack/.netspeed.sh
 	status_command i3status
 	i3bar_command i3bar
 	position bottom
