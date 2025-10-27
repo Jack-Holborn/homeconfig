@@ -41,98 +41,9 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-<<<<<<< HEAD
-#############################
-# WORKSPACE
-#############################
-# Mouse follow focused container
-mouse_warping output
-# set default desktop layout (default is tiling)
-workspace_layout default
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 2
-default_floating_border normal 1
-# workspace back and forth (with/without active container)
-#workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-#bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-# split orientation
-bindsym $mod+h split h;exec notify-send 'Arrangement horizontal'
-bindsym $mod+v split v;exec notify-send 'Arrangement vertical'
-bindsym $mod+e split toggle
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+p layout toggle split
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:I"
-set $ws2 "2:II"
-set $ws3 "3:III"
-set $ws4 "4:IV"
-set $ws5 "5:V"
-set $ws6 "6:VI"
-set $ws7 "7:VII"
-set $ws8 "8:VIII"
-set $ws9 "9:IX"
-set $ws10 "10:X"
-# switch to workspace
-bindsym $mod+ampersand workspace number $ws1
-bindsym $mod+eacute workspace number $ws2
-bindsym $mod+quotedbl workspace number $ws3
-bindsym $mod+apostrophe workspace number $ws4
-bindsym $mod+parenleft workspace number $ws5
-bindsym $mod+minus workspace number $ws6
-bindsym $mod+egrave workspace number $ws7
-bindsym $mod+underscore workspace number $ws8
-bindsym $mod+ccedilla workspace number $ws9
-bindsym $mod+agrave workspace number $ws10
-# move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace number $ws1
-bindsym $mod+Shift+eacute move container to workspace number $ws2
-bindsym $mod+Shift+quotedbl move container to workspace number $ws3
-bindsym $mod+Shift+apostrophe move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+minus move container to workspace number $ws6
-bindsym $mod+Shift+egrave move container to workspace number $ws7
-bindsym $mod+Shift+underscore move container to workspace number $ws8
-bindsym $mod+Shift+ccedilla move container to workspace number $ws9
-bindsym $mod+Shift+agrave move container to workspace number $ws10
-# move to workspace with focused container
-bindsym $mod+Ctrl+ampersand move container to workspace number $ws1; workspace number $ws1
-bindsym $mod+Ctrl+eacute move container to workspace number $ws2; workspace number $ws2
-bindsym $mod+Ctrl+quotedbl move container to workspace number $ws3; workspace number $ws3
-bindsym $mod+Ctrl+apostrophe move container to workspace number $ws4; workspace number $ws4
-bindsym $mod+Ctrl+5 move container to workspace number $ws5; workspace number $ws5
-bindsym $mod+Ctrl+minus move container to workspace number $ws6; workspace number $ws6
-bindsym $mod+Ctrl+egrave move container to workspace number $ws7; workspace number $ws7
-bindsym $mod+Ctrl+underscore move container to workspace number $ws8; workspace number $ws8
-bindsym $mod+Ctrl+ccedilla move container to workspace number $ws9; workspace number $ws9
-bindsym $mod+Ctrl+agrave move container to workspace number $ws10; workspace number $ws10
-#navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	# show only workspace names
-	strip_workspace_numbers yes
-	#status_command exec /home/jack/.netspeed.sh
-	status_command i3status
-	i3bar_command i3bar
-	position bottom
-	bindsym button4 nop
-	bindsym button5 nop
-	#font xft:URW Gothic 9
-	font pango:Deja Vu Sans Mono 9
-=======
 #############################################
 # THEMING COLORS
 include theme.conf
->>>>>>> 7e80d36 (Modification - I3 config files)
 
 #############################################
 # WORKSPACES

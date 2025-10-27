@@ -1,0 +1,106 @@
+#!/bin/bash
+# i3help is a guide to your I3 shortcuts, type `i3help` in terminal, use
+# colored grep for better visibility
+
+# i3launch moves programs started with this command to the next workspace, or
+# first if you're in the last workspace.
+#{{{ I3 shortcuts guide
+i3help () {
+        local modifier='Win'
+
+        this_help () {
+                cat <<EOM
+Usage: i3help [-a] [-f] [-s] [-w] [-h]
+
+  -h      This help
+  -a      Applications shortcuts
+  -f      Containers shortcuts
+  -s      System shortcuts
+  -w      Workspaces shortcuts
+
+EOM
+        }
+
+        i3_apps () {
+                grep '^bindsym' ~/.config/i3/applications.conf
+        }
+
+        i3_win () {
+                grep '^bindsym' ~/.config/i3/containers.conf
+        }
+
+        i3_wspace () {
+                grep '^bindsym' ~/.config/i3/workspaces.conf
+        }
+
+        i3_config () {
+                grep '^bindsym' ~/.config/i3/config
+        }
+
+        s_format () {
+                $1 |sed -e "s/^bindsym/Shortcut/;s/\$mod/${modifier}/" |grep "${modifier}\(+\w*\)\{0,5\}"
+        }
+
+        OPTIND=
+        if [ $# -eq 0 ]; then
+                this_help
+                echo
+                s_format i3_config
+                s_format i3_apps
+                s_format i3_win
+                s_format i3_wspace
+        fi
+
+        while getopts ":afhsw" option; do
+                case $option in
+                        a)
+                                echo Applications:
+                                s_format i3_apps;;
+                        f)
+                                echo Containers:
+                                s_format i3_win;;
+                        h)
+                                this_help;;
+                        s)
+                                echo System:
+                                s_format i3_config;;
+                        w)
+                                echo Workspaces:
+                                s_format i3_wspace;;
+                        *)
+                                this_help;;
+                esac
+        done
+}
+#}}}
+#{{{ Launch a program in a new workspace
+#    go to workspace 1 if we are in the last one
+i3launch () {
+        local ws_list ws_cur i
+        declare -a ws_list=(0 $(i3-msg -r -t get_workspaces|jq -r '.[].name'))
+        ws_cur="$(i3-msg -r -t get_workspaces|jq -r '.[]|select(.focused==true).name')"
+        i=0
+
+        [[ $# -le 0 ]] && exit
+
+        i3_launch_program () {
+                local ws=$1
+                shift
+                i3-msg -q -t command "$(echo 'workspace '$ws'; exec --no-startup-id '"$@"'')"
+        }
+
+        while [[ $i -le ${#ws_list[@]} ]]; do
+                let i=i+1
+                if [[ ${ws_cur} = ${ws_list[$i]} ]]; then
+                        if [ x"${ws_list[$i+1]}" = x ]; then
+                                ws_cur="${ws_list[1]}"
+                        else
+                                ws_cur="${ws_list[i+1]}"
+                        fi
+                        break
+                fi
+        done
+
+        i3_launch_program ${ws_cur} $@
+}
+#}}}
