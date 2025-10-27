@@ -9,7 +9,7 @@ These are my configuration files for I3 wm with my beautiful Gentoo theme !
 
 [<img src="i3-gentoo.png" width="1280" height="720">](i3-gentoo.png)
 ## Installation
-You will need `conky` and `ImageMagick` for the best experience. Just copy everything into your ~/.config/i3 directory.
+You will need `conky` and `ImageMagick` for the best experience. Just copy everything into your `~/.config/i3` directory.
 - `config` and `containers.conf` don't need to be modified except if you need to change display resolution and/or keyboard layout
 - adjust others - like `applications.conf` - depending on what you have installed in your system (I'm using Mate and Enlightenment a lot, so my conf is full of `mate-..` and `terminology` commands)
 - Link Xresources or append it's content to your ~/.Xresources file
@@ -17,13 +17,13 @@ You will need `conky` and `ImageMagick` for the best experience. Just copy every
 ```bash 
 source ~/.config/i3/bashrc
 ```
-- `dmenurc` is for those using dmenu_run command, copy or link this file to `~/.dmenurc`
+- `dmenurc` is for those using 'dmenu_run' command, copy or link this file to `~/.dmenurc`
 - `dunstrc` needs some rework, so don't use it for now :)
 - copy `netspeed.sh` to `~/.netspeed.sh`
 - `picom.conf` is not used anymore, so try it at your own risk, although it was usable as of 03/2020
 ## Authors
 
-- [Jack Holborn](jack.holborn@hotmail.com)
+- [Jack Holborn](https://github.com/Jack-Holborn)
 - Many sources from Internet
 ## Acknowledgements
 
