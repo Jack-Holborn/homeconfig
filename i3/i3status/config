@@ -1,4 +1,5 @@
 # i3status configuration file.
+<<<<<<< HEAD
 # Last change: 07-2023 by Jack Holborn <jack.holborn@free.fr>
 #
 general {
@@ -8,63 +9,77 @@ general {
         color_good = "#2AA198"
         color_degraded = "#586E75"
         color_bad = "#DC322F"
+=======
+# Last change: 10-2025 by Jack Holborn <jack.holborn@free.fr>
+#
+general {
+	output_format = "i3bar"
+	interval = 1
+	colors = true
+	color_good = "#2AA198"
+	color_degraded = "#586E75"
+	color_bad = "#DC322F"
+>>>>>>> 7e80d36 (Modification - I3 config files)
 }
 
 order += "cpu_usage"
-order += "disk /"
-order += "wireless _first_"
-order += "ethernet _first_"
-order += "run_watch DHCP"
-order += "battery all"
 order += "load"
+order += "disk /"
+order += "disk /storage"
+order += "disk /home/jack/.cache/mozilla"
+order += "ethernet _first_"
 order += "memory"
 order += "tztime local"
 
 cpu_usage {
+<<<<<<< HEAD
         color_degraded = "#CA9B1A"
         format = "CPU %usage"
+=======
+	color_degraded = "#CA9B1A"
+	format = "CPU %usage"
+>>>>>>> 7e80d36 (Modification - I3 config files)
 }
 
 load {
-        format = "LOAD %1min"
-        max_threshold = 3
+	format = "LOAD %1min"
+	max_threshold = 3
 }
 
 disk "/" {
-        format = "Root ⛁ %avail free"
+	format = "Root ⛁ %avail free"
 }
 
+<<<<<<< HEAD
 wireless _first_ {
         color_bad = "#586E75"
 				format_up = "Wifi: %essid (%quality, %bitrate) %ip"
 				format_down = " Wifi non connecté "
+=======
+disk "/storage" {
+	format = "Storage ⛁ %avail free"
+}
+
+disk "/home/jack/.cache/mozilla" {
+	format = "MozCache ⛁ %avail free"
+>>>>>>> 7e80d36 (Modification - I3 config files)
 }
 
 ethernet _first_ {
-        format_up = "Eth: %ip %speed"
-        format_down = "non connecté"
-}
-
-battery all {
-        format = " %status %percentage"
-        format_down = "No battery"
-        last_full_capacity = true
-        integer_battery_capacity = true
-        status_chr = "BAT⚡"
-        status_bat = "BAT"
-        status_unk = "BAT--"
-        status_full = "BAT☻"
-        color_bad = "#EF6E75"
-        low_threshold = 15
-        threshold_type = percentage
+	format_up = "Eth: %ip %speed"
+	format_down = "non connecté"
 }
 
 memory {
-        format = "RAM %used / %available"
-        threshold_degraded = "1G"
-        format_degraded = "LOW MEMORY %available"
+	format = "RAM %used/%available"
+	threshold_degraded = "1G"
+	format_degraded = "LOW MEMORY %available"
 }
 
 tztime local {
+<<<<<<< HEAD
         format = "%A %d %B %Y %H:%M %Z "
+=======
+	format = "%A %d %B %Y %H:%M %Z "
+>>>>>>> 7e80d36 (Modification - I3 config files)
 }
