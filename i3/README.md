@@ -12,7 +12,7 @@ These are my configuration files for I3 wm with my beautiful Gentoo theme !
 You will need `conky` and `ImageMagick` for the best experience. Just copy everything into your `~/.config/i3` directory.
 - `config` and `containers.conf` don't need to be modified except if you need to change display resolution and/or keyboard layout
 - adjust others - like `applications.conf` - depending on what you have installed in your system (I'm using Mate and Enlightenment a lot, so my conf is full of `mate-..` and `terminology` commands)
-- Link Xresources or append it's content to your ~/.Xresources file
+- Link Xresources or append it's content to your `~/.Xresources` file
 - source `bashrc` from your Bash configuration file, add this line :
 ```bash 
 source ~/.config/i3/bashrc
